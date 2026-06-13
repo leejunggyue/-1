@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🌺 오키나와 여행 체크리스트</title>
+<style>
+  :root {
+    --ocean: #0099cc;
+    --ocean-deep: #006699;
+    --sand: #fef6e4;
+    --coral: #ff6f61;
+    --leaf: #2bb673;
+    --ink: #1f2d3d;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #7fd7f5 0%, #c8eef9 30%, var(--sand) 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+    padding-bottom: 60px;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 48px 20px 32px;
+    background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-deep) 100%);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 102, 153, 0.25);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+  header p {
+    margin: 10px 0 0;
+    opacity: 0.92;
+    font-size: 1rem;
+  }
+
+  /* Progress */
+  .progress-wrap {
+    max-width: 760px;
+    margin: -24px auto 0;
+    padding: 0 16px;
+  }
+  .progress-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .progress-bar {
+    flex: 1;
+    height: 14px;
+    background: #e7eef2;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--leaf), var(--ocean));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+  .progress-text {
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    color: var(--ocean-deep);
+  }
+
+  main {
+    max-width: 760px;
+    margin: 28px auto 0;
+    padding: 0 16px;
+  }
+
+  /* Section heading */
+  .band {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 36px 0 14px;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  .band.required { color: #c0392b; }
+  .band.optional { color: #34495e; }
+
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+  .card h3 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ocean-deep);
+    border-bottom: 2px dashed #e3edf2;
+    padding-bottom: 10px;
+  }
+
+  ul.list { list-style: none; margin: 0; padding: 0; }
+  ul.list li {
+    margin: 4px 0;
+  }
+  label.item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  label.item:hover { background: #f3f9fc; }
+  label.item input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 2px solid var(--ocean);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s;
+  }
+  label.item input:checked {
+    background: var(--ocean);
+  }
+  label.item input:checked::after {
+    content: "✓";
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  label.item span { font-size: 1rem; }
+  label.item input:checked + span {
+    text-decoration: line-through;
+    color: #9aa7b0;
+  }
+
+  /* Notes */
+  .note {
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 0.94rem;
+  }
+  .note.warn {
+    background: #fff4e5;
+    border-left: 5px solid var(--coral);
+  }
+  .note.tip {
+    background: #e9f8f0;
+    border-left: 5px solid var(--leaf);
+  }
+  .note strong { display: block; margin-bottom: 4px; }
+  .note p { margin: 6px 0; }
+
+  .reset-btn {
+    display: block;
+    margin: 36px auto 0;
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 99px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(255,111,97,0.35);
+    transition: transform 0.1s;
+  }
+  .reset-btn:active { transform: scale(0.96); }
+
+  footer {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: #6b7b88;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>🌺 오키나와 여행 체크리스트</h1>
+    <p>설레는 오키나와 여행, 빠진 짐 없이 준비해요!</p>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-card">
+      <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
+      <div class="progress-text" id="ptext">0 / 0 완료</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 필수 -->
+    <div class="band required">🟥 선택 아닌 필수</div>
+
+    <div class="card">
+      <h3>✈️ 여행 준비물</h3>
+      <ul class="list">
+        <li><label class="item"><input type="checkbox"><span>항공권 (E-Ticket)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>여권 (유효기간 확인)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>여권 사본 및 여권 사진 (분실 대비)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>여행자보험 (필수)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>해외결제카드 (신용카드 추천)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>환전용 엔화</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>유심 / eSIM</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>숙소 및 예약 바우처</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>국제운전면허증 (렌터카 이용 시)</span></label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>👕 옷 및 물놀이 준비물</h3>
+      <ul class="list">
+        <li><label class="item"><input type="checkbox"><span>상의 / 하의</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>잠옷</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>속옷</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>가벼운 겉옷 (실내 에어컨이 강해요!)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>양말</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>선글라스 / 모자</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>운동화 / 샌들</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>수영복</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>비치타월</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>아쿠아슈즈</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>방수팩</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>물안경 및 스노클링 장비 (선택)</span></label></li>
+      </ul>
+      <div class="note warn">
+        <strong>⚠️ 오키나와의 햇빛은 생각보다 매우 강합니다!</strong>
+        선글라스, 모자, 선크림은 꼭 챙겨주세요.
+      </div>
+      <div class="note warn">
+        <strong>⚠️ 산호가 많은 해변은 맨발로 다니면 발이 다칠 수 있습니다.</strong>
+        아쿠아슈즈를 꼭 준비해 주세요.
+      </div>
+    </div>
+
+    <!-- 선택 -->
+    <div class="band optional">⬛ 필수는 아니지만 있으면 좋은 준비물</div>
+
+    <div class="card">
+      <h3>🧴 생활용품</h3>
+      <ul class="list">
+        <li><label class="item"><input type="checkbox"><span>개인 수건</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>돼지코 (110V 변환 플러그)</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>선크림</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>개인 화장품 및 세면도구</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>보조배터리</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>휴대용 선풍기</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>우산 또는 우비</span></label></li>
+      </ul>
+      <div class="note tip">
+        <strong>💡 참고사항</strong>
+        <p>✔ 일본 독채 숙소는 수건을 제공하지 않는 경우가 많습니다. 번거로우시더라도 개인 수건을 꼭 챙겨주세요!</p>
+        <p>✔ 숙소에는 샴푸, 바디워시, 헤어드라이어, 세탁기가 구비되어 있습니다.</p>
+        <p>✔ 개인 화장품, 세안용품, 칫솔, 치약 등 개인 위생용품은 직접 준비해 주셔야 합니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>💊 상비약</h3>
+      <div class="note tip" style="margin-top:0;">약도 없으면 짐이에요! 팀원이랑 나눠서 챙기기 😊</div>
+      <ul class="list">
+        <li><label class="item"><input type="checkbox"><span>두통약 / 진통제</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>감기약</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>소화제</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>지사제</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>멀미약</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>반창고 + 연고</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>모기기피제</span></label></li>
+        <li><label class="item"><input type="checkbox"><span>알레르기약</span></label></li>
+      </ul>
+    </div>
+
+    <button class="reset-btn" id="reset">🗑️ 체크 모두 초기화</button>
+    <footer>오키나와에서 즐거운 여행 되세요! 🏝️</footer>
+  </main>
+
+<script>
+  const KEY = "okinawa-checklist-v1";
+  const boxes = Array.from(document.querySelectorAll('input[type=checkbox]'));
+  const fill = document.getElementById('fill');
+  const ptext = document.getElementById('ptext');
+
+  // 각 체크박스에 인덱스 기반 id 부여
+  boxes.forEach((b, i) => b.dataset.idx = i);
+
+  function save() {
+    const state = boxes.map(b => b.checked);
+    localStorage.setItem(KEY, JSON.stringify(state));
+  }
+  function load() {
+    try {
+      const state = JSON.parse(localStorage.getItem(KEY) || "[]");
+      boxes.forEach((b, i) => { if (state[i]) b.checked = true; });
+    } catch (e) {}
+  }
+  function updateProgress() {
+    const done = boxes.filter(b => b.checked).length;
+    const total = boxes.length;
+    const pct = total ? Math.round(done / total * 100) : 0;
+    fill.style.width = pct + "%";
+    ptext.textContent = `${done} / ${total} 완료 (${pct}%)`;
+  }
+
+  boxes.forEach(b => b.addEventListener('change', () => { save(); updateProgress(); }));
+  document.getElementById('reset').addEventListener('click', () => {
+    if (confirm("모든 체크를 초기화할까요?")) {
+      boxes.forEach(b => b.checked = false);
+      save(); updateProgress();
+    }
+  });
+
+  load();
+  updateProgress();
+</script>
+</body>
+</html>
