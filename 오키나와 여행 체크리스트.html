@@ -105,10 +105,6 @@
   .gbanner.ess{background:var(--aqua); color:#fff;}
   .gbanner.ess .sq{background:#fff;}
   .gbanner.ess .kick{color:rgba(255,255,255,.82);}
-  .gbanner.day{background:#EAF7F9; color:var(--aqua-deep); border:1px solid #CDEAEF;}
-  .gbanner.day .sq{background:var(--aqua);}
-  .gbanner.day .kick{color:var(--aqua-deep);}
-  .gbanner.day .ttl{color:var(--ink);}
   .gbanner.opt{background:#F1F7F7; color:var(--ink); border:1px solid var(--line);}
   .gbanner.opt .sq{background:var(--ink);}
   .gbanner.opt .kick{color:var(--muted);}
@@ -185,10 +181,10 @@
     border-radius:12px; border-left:4px solid; font-size:14px; line-height:1.62;
   }
   .callout.warn{background:var(--amber-bg); border-color:var(--amber-bar);}
-  .callout.info{background:var(--blue-soft); border-color:var(--blue);}
+  .callout.info{background:var(--aqua-soft); border-color:var(--aqua);}
   .callout .ct{display:flex; align-items:center; gap:7px; font-weight:800; font-size:14px; margin-bottom:6px;}
   .callout.warn .ct{color:#B5790C;}
-  .callout.info .ct{color:var(--blue-deep);}
+  .callout.info .ct{color:var(--aqua-deep);}
   .callout p{margin:0; color:#3A4548; word-break:keep-all;}
   .callout p + p{margin-top:7px;}
   .callout b{font-weight:800;}
@@ -258,148 +254,164 @@
     </div>
   </section>
 
-  <!-- ===== GROUP 1: 공통 ===== -->
+  <!-- ===== GROUP 1: 필수 ===== -->
   <div class="group">
     <div class="gbanner ess">
       <span class="sq"></span>
       <div class="gt">
-        <span class="kick">PART 1 — 공통</span>
-        <span class="ttl">어디서나 필요한 준비물</span>
+        <span class="kick">PART 1 — 필수</span>
+        <span class="ttl">꼭 챙겨야 할 준비물</span>
       </div>
     </div>
   </div>
 
-  <!-- 공통 준비물 -->
-  <section class="section" data-section="common">
+  <!-- 필수 준비물 -->
+  <section class="section" data-section="essentials">
     <div class="sec-head">
-      <span class="emo">🧳</span>
-      <h3>공통 준비물</h3>
+      <span class="emo">📄</span>
+      <h3>필수 준비물</h3>
       <span class="cnt" data-cnt>0/0</span>
     </div>
     <div class="sec-rule"></div>
     <div class="list">
-      <label class="item"><input type="checkbox" data-key="co-passport"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>여권</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-air"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>항공권 / E-Ticket</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-money"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>환전 및 카드</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-plug"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>돼지코</b> <span class="det">110V 변환 플러그</span></span></label>
-      <label class="item"><input type="checkbox" data-key="co-battery"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>보조배터리</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-charger"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>충전기 및 케이블</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-meds"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>상비약 및 멀미약</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-suncream"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선크림</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-sunglass"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선글라스</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-hat"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>모자</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-swim"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>수영복</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-aqua"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>아쿠아슈즈</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-toiletries"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>세면도구 및 화장품</b></span></label>
-      <label class="item"><input type="checkbox" data-key="co-clothes"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>여벌 옷</b></span></label>
+      <label class="item"><input type="checkbox" data-key="r-passport"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>여권</b></span></label>
+      <label class="item"><input type="checkbox" data-key="r-air"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>항공권</b> <span class="det">E-Ticket</span></span></label>
+      <label class="item"><input type="checkbox" data-key="r-card"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>해외결제 카드</b></span></label>
+      <label class="item"><input type="checkbox" data-key="r-yen"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>환전한 엔화</b></span></label>
+      <label class="item"><input type="checkbox" data-key="r-insurance"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>여행자 보험 가입 확인</b></span></label>
     </div>
     <div class="custom-slot"></div>
     <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
   </section>
 
-  <div class="grp-sep"></div>
-
-  <!-- ===== GROUP 2: 일정별 ===== -->
-  <div class="group">
-    <div class="gbanner day">
-      <span class="sq"></span>
-      <div class="gt">
-        <span class="kick">PART 2 — 일정별</span>
-        <span class="ttl">데일리 준비물</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 1일차 -->
-  <section class="section" data-section="day1">
-    <div class="sec-head">
-      <span class="emo">🌴</span>
-      <h3>1일차</h3>
-      <span class="cnt" data-cnt>0/0</span>
-    </div>
-    <div class="sec-rule"></div>
-    <p class="sec-note">우미카지테라스 · 국제거리</p>
-    <div class="list">
-      <label class="item"><input type="checkbox" data-key="d1-shoes"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>편한 신발</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d1-sunglass"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선글라스</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d1-hat"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>모자</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d1-parasol"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>양산</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d1-fan"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>휴대용 선풍기</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d1-camera"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>카메라 또는 셀카봉</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d1-battery"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>보조배터리</b></span></label>
-    </div>
-    <div class="custom-slot"></div>
-    <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
-  </section>
-
-  <div class="callout warn">
+  <div class="callout info">
     <div class="ct">💡 Tip!</div>
-    <p>엄청 덥고 햇빛이 뜨거워요! <b>선글라스 · 모자 · 양산 · 휴대용 선풍기</b>를 꼭 챙기세요.</p>
+    <p>개인 지출에 따라 다르지만, 식비는 한 끼당 약 <b>1,500엔~3,000엔</b> 정도 예상되며 평균적으로 4박 5일 식비는 약 <b>30,000엔</b> 정도입니다!</p>
+    <p>식당 중 <b>현금만 사용 가능한 곳</b>이 꽤 많으므로, 환전하여 오시는 것을 추천드립니다. 다만 편의점·쇼핑몰 등 대형 상점에서는 카드 사용이 가능합니다!</p>
+    <p>현지 편의점에서도 <b>현금 인출</b>이 가능한 점 참고 부탁드립니다!</p>
   </div>
 
-  <!-- 2일차 -->
-  <section class="section" data-section="day2">
+  <!-- 전자기기 -->
+  <section class="section" data-section="devices">
     <div class="sec-head">
-      <span class="emo">🐠</span>
-      <h3>2일차</h3>
+      <span class="emo">📱</span>
+      <h3>전자기기</h3>
       <span class="cnt" data-cnt>0/0</span>
     </div>
     <div class="sec-rule"></div>
-    <p class="sec-note">츄라우미수족관 · 비세후쿠기길 · 코우리대교</p>
     <div class="list">
-      <label class="item"><input type="checkbox" data-key="d2-shoes"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>운동화</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d2-suncream"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선크림</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d2-hat"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>모자</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d2-sunglass"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선글라스</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d2-bottle"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>물병</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d2-battery"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>보조배터리</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d2-camera"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>카메라</b></span></label>
+      <label class="item"><input type="checkbox" data-key="e-charger"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>충전기 및 케이블</b></span></label>
+      <label class="item"><input type="checkbox" data-key="e-battery"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>보조배터리</b></span></label>
+      <label class="item"><input type="checkbox" data-key="e-plug"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>돼지코</b> <span class="det">110V 변환 플러그</span></span></label>
+      <label class="item"><input type="checkbox" data-key="e-camera"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>카메라</b> <span class="det">선택</span></span></label>
+      <label class="item"><input type="checkbox" data-key="e-selfie"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>셀카봉 또는 삼각대</b></span></label>
     </div>
     <div class="custom-slot"></div>
     <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
   </section>
 
-  <!-- 3일차 -->
-  <section class="section" data-section="day3">
+  <!-- 의류 -->
+  <section class="section" data-section="clothes">
+    <div class="sec-head">
+      <span class="emo">👕</span>
+      <h3>의류</h3>
+      <span class="cnt" data-cnt>0/0</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="list">
+      <label class="item"><input type="checkbox" data-key="c-tshirt"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>반팔 티셔츠</b></span></label>
+      <label class="item"><input type="checkbox" data-key="c-shorts"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>반바지</b></span></label>
+      <label class="item"><input type="checkbox" data-key="c-underwear"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>속옷 및 양말</b></span></label>
+      <label class="item"><input type="checkbox" data-key="c-sleep"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>잠옷</b></span></label>
+      <label class="item"><input type="checkbox" data-key="c-outer"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>얇은 겉옷</b></span></label>
+      <label class="item"><input type="checkbox" data-key="c-sneakers"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>편한 운동화</b></span></label>
+      <label class="item"><input type="checkbox" data-key="c-slipper"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>슬리퍼</b></span></label>
+    </div>
+    <div class="custom-slot"></div>
+    <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
+  </section>
+
+  <!-- 물놀이 준비물 -->
+  <section class="section" data-section="water">
     <div class="sec-head">
       <span class="emo">🏖️</span>
-      <h3>3일차</h3>
+      <h3>물놀이 준비물</h3>
       <span class="cnt" data-cnt>0/0</span>
     </div>
     <div class="sec-rule"></div>
-    <p class="sec-note">해변 물놀이 · 이자카야</p>
     <div class="list">
-      <label class="item"><input type="checkbox" data-key="d3-swim"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>수영복</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-rash"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>래쉬가드</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-towel"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>비치타월</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-aqua"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>아쿠아슈즈</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-waterproof"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>방수팩</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-clothes"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>여벌 옷</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-suncream"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선크림</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d3-shower"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>샤워용품</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-swim"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>수영복</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-rash"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>래쉬가드</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-goggle"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>물안경</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-aqua"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>아쿠아슈즈</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-towel"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>비치타월</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-waterproof"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>방수팩</b></span></label>
+      <label class="item"><input type="checkbox" data-key="w-bag"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>방수 가방</b> <span class="det">선택</span></span></label>
     </div>
     <div class="custom-slot"></div>
     <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
   </section>
 
-  <!-- 4일차 -->
-  <section class="section" data-section="day4">
+  <!-- 자외선 대비 -->
+  <section class="section" data-section="uv">
     <div class="sec-head">
-      <span class="emo">🌊</span>
-      <h3>4일차</h3>
+      <span class="emo">☀️</span>
+      <h3>자외선 대비</h3>
       <span class="cnt" data-cnt>0/0</span>
     </div>
     <div class="sec-rule"></div>
-    <p class="sec-note">만좌모 · 푸른동굴 스노클링 · 아메리칸빌리지</p>
     <div class="list">
-      <label class="item"><input type="checkbox" data-key="d4-swim"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>수영복</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-rash"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>래쉬가드</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-aqua"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>아쿠아슈즈</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-towel"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>비치타월</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-waterproof"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>방수팩</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-suncream"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선크림</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-clothes"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>여벌 옷</b></span></label>
-      <label class="item"><input type="checkbox" data-key="d4-ecobag"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>기념품 담을 에코백</b></span></label>
+      <label class="item"><input type="checkbox" data-key="u-suncream"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선크림</b></span></label>
+      <label class="item"><input type="checkbox" data-key="u-sunglass"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>선글라스</b></span></label>
+      <label class="item"><input type="checkbox" data-key="u-parasol"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>양산</b></span></label>
+      <label class="item"><input type="checkbox" data-key="u-hat"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>모자</b></span></label>
+      <label class="item"><input type="checkbox" data-key="u-fan"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>휴대용 선풍기</b></span></label>
+    </div>
+    <div class="custom-slot"></div>
+    <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
+  </section>
+
+  <!-- 세면 및 뷰티 -->
+  <section class="section" data-section="beauty">
+    <div class="sec-head">
+      <span class="emo">🧴</span>
+      <h3>세면 및 뷰티</h3>
+      <span class="cnt" data-cnt>0/0</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="list">
+      <label class="item"><input type="checkbox" data-key="b-tooth"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>칫솔 및 치약</b></span></label>
+      <label class="item"><input type="checkbox" data-key="b-cosmetic"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>화장품 및 기초제품</b></span></label>
+      <label class="item"><input type="checkbox" data-key="b-razor"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>면도기</b> <span class="det">필요 시</span></span></label>
+      <label class="item"><input type="checkbox" data-key="b-lens"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>렌즈 및 렌즈용품</b> <span class="det">필요 시</span></span></label>
+      <label class="item"><input type="checkbox" data-key="b-towel"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>수건</b></span></label>
+    </div>
+    <div class="custom-slot"></div>
+    <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
+  </section>
+
+  <div class="callout info">
+    <div class="ct">💡 Tip!</div>
+    <p>일본 독채 숙소는 <b>수건을 제공하지 않으므로</b>, 번거로우시더라도 개인 수건을 지참해 주시기 바랍니다.</p>
+    <p>간단한 세면도구(샴푸·바디워시), 헤어드라이어, 세탁기가 숙소에 구비되어 있습니다. <b>개인적인 물품은 꼭 챙겨 오셔야 합니다!</b></p>
+  </div>
+
+  <!-- 건강 관리 -->
+  <section class="section" data-section="health">
+    <div class="sec-head">
+      <span class="emo">💊</span>
+      <h3>건강 관리</h3>
+      <span class="cnt" data-cnt>0/0</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="list">
+      <label class="item"><input type="checkbox" data-key="m-personal"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>개인 복용약</b></span></label>
+      <label class="item"><input type="checkbox" data-key="m-pain"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>진통제</b></span></label>
+      <label class="item"><input type="checkbox" data-key="m-diarrhea"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>지사제</b></span></label>
+      <label class="item"><input type="checkbox" data-key="m-digest"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>소화제</b></span></label>
+      <label class="item"><input type="checkbox" data-key="m-motion"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>멀미약</b></span></label>
+      <label class="item"><input type="checkbox" data-key="m-band"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>밴드 및 연고</b></span></label>
+      <label class="item"><input type="checkbox" data-key="m-bug"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>벌레 기피제</b></span></label>
     </div>
     <div class="custom-slot"></div>
     <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
@@ -407,12 +419,12 @@
 
   <div class="grp-sep"></div>
 
-  <!-- ===== GROUP 3: 선택 ===== -->
+  <!-- ===== GROUP 2: 선택 ===== -->
   <div class="group">
     <div class="gbanner opt">
       <span class="sq"></span>
       <div class="gt">
-        <span class="kick">PART 3 — 선택</span>
+        <span class="kick">PART 2 — 선택</span>
         <span class="ttl">있으면 좋은 준비물</span>
       </div>
     </div>
@@ -427,14 +439,13 @@
     </div>
     <div class="sec-rule"></div>
     <div class="list">
-      <label class="item"><input type="checkbox" data-key="op-umbrella"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>우산 또는 우비</b></span></label>
-      <label class="item"><input type="checkbox" data-key="op-compress"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>압축팩</b></span></label>
-      <label class="item"><input type="checkbox" data-key="op-ziplock"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>지퍼백</b></span></label>
-      <label class="item"><input type="checkbox" data-key="op-neck"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>목베개</b></span></label>
-      <label class="item"><input type="checkbox" data-key="op-sanitizer"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>손소독제</b></span></label>
       <label class="item"><input type="checkbox" data-key="op-wipes"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>물티슈</b></span></label>
-      <label class="item"><input type="checkbox" data-key="op-bug"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>벌레 기피제</b></span></label>
-      <label class="item"><input type="checkbox" data-key="op-translate"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>일본어 번역 앱</b></span></label>
+      <label class="item"><input type="checkbox" data-key="op-sanitizer"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>손소독제</b></span></label>
+      <label class="item"><input type="checkbox" data-key="op-ziplock"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>지퍼백</b></span></label>
+      <label class="item"><input type="checkbox" data-key="op-compress"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>압축팩</b></span></label>
+      <label class="item"><input type="checkbox" data-key="op-ecobag"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>에코백</b></span></label>
+      <label class="item"><input type="checkbox" data-key="op-umbrella"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>우산 또는 우비</b></span></label>
+      <label class="item"><input type="checkbox" data-key="op-tumbler"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span><span class="txt"><b>텀블러 또는 물병</b></span></label>
     </div>
     <div class="custom-slot"></div>
     <button class="add-row" data-add><span class="plus">+</span>직접 추가하기</button>
@@ -563,7 +574,7 @@
 </script>
 <script>
 (function(){
-  const LS = 'travelsearch_okinawa_checklist_v2';
+  const LS = 'travelsearch_okinawa_checklist_v3';
   let state = {};
   try{ state = JSON.parse(localStorage.getItem(LS)) || {}; }catch(e){ state = {}; }
   state.checks = state.checks || {};
