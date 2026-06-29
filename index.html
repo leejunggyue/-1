@@ -3,209 +3,254 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>🌺 오키나와 여행 체크리스트</title>
+<title>🌊 오키나와 여행 체크리스트</title>
 <style>
   :root {
-    --ocean: #0099cc;
-    --ocean-deep: #006699;
-    --sand: #fef6e4;
-    --coral: #ff6f61;
-    --leaf: #2bb673;
-    --ink: #1f2d3d;
-    --card: #ffffff;
+    --aqua: #00b4d8;
+    --aqua-light: #48cae4;
+    --aqua-pale: #ade8f4;
+    --deep: #0077b6;
+    --navy: #023e5a;
+    --coral: #ff7a6b;
+    --leaf: #2bc48a;
+    --ink: #14323f;
+    --glass: rgba(255, 255, 255, 0.72);
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
     color: var(--ink);
-    background: linear-gradient(180deg, #7fd7f5 0%, #c8eef9 30%, var(--sand) 100%);
+    background:
+      radial-gradient(1200px 500px at 50% -10%, #caf0f8 0%, transparent 60%),
+      linear-gradient(180deg, #e8faff 0%, #d4f1f9 40%, #eaf7fb 100%);
     background-attachment: fixed;
-    line-height: 1.6;
-    padding-bottom: 60px;
+    line-height: 1.65;
+    padding-bottom: 70px;
   }
 
-  /* Header */
+  /* ===== Header with wave ===== */
   header {
+    position: relative;
     text-align: center;
-    padding: 48px 20px 32px;
-    background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-deep) 100%);
+    padding: 56px 20px 70px;
+    background: linear-gradient(135deg, var(--aqua-light) 0%, var(--aqua) 45%, var(--deep) 100%);
     color: #fff;
-    box-shadow: 0 6px 20px rgba(0, 102, 153, 0.25);
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(140px 140px at 18% 30%, rgba(255,255,255,0.25), transparent 70%),
+      radial-gradient(180px 180px at 82% 20%, rgba(255,255,255,0.18), transparent 70%);
+    pointer-events: none;
   }
   header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.1rem;
     letter-spacing: -0.5px;
+    text-shadow: 0 3px 14px rgba(2,62,90,0.35);
+    position: relative;
   }
   header p {
-    margin: 10px 0 0;
-    opacity: 0.92;
-    font-size: 1rem;
+    margin: 12px 0 0;
+    opacity: 0.95;
+    font-size: 1.02rem;
+    position: relative;
+  }
+  .wave {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    width: 100%;
+    height: 60px;
+    display: block;
   }
 
-  /* Progress */
+  /* ===== Progress ===== */
   .progress-wrap {
-    max-width: 760px;
-    margin: -24px auto 0;
+    max-width: 780px;
+    margin: -34px auto 0;
     padding: 0 16px;
+    position: relative;
+    z-index: 5;
   }
   .progress-card {
-    background: var(--card);
-    border-radius: 16px;
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 18px;
     padding: 18px 22px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 30px rgba(0, 119, 182, 0.18);
     display: flex;
     align-items: center;
     gap: 16px;
   }
   .progress-bar {
     flex: 1;
-    height: 14px;
-    background: #e7eef2;
+    height: 16px;
+    background: #dff1f7;
     border-radius: 99px;
     overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
   }
   .progress-fill {
     height: 100%;
     width: 0;
-    background: linear-gradient(90deg, var(--leaf), var(--ocean));
+    background: linear-gradient(90deg, var(--leaf), var(--aqua));
     border-radius: 99px;
-    transition: width 0.4s ease;
+    transition: width 0.45s cubic-bezier(.4,1.4,.5,1);
   }
   .progress-text {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.95rem;
     white-space: nowrap;
-    color: var(--ocean-deep);
+    color: var(--deep);
   }
 
   main {
-    max-width: 760px;
-    margin: 28px auto 0;
+    max-width: 780px;
+    margin: 30px auto 0;
     padding: 0 16px;
   }
 
-  /* Section heading */
+  /* ===== Section band ===== */
   .band {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 36px 0 14px;
-    font-size: 1.25rem;
+    margin: 40px 0 16px;
+    font-size: 1.3rem;
     font-weight: 800;
+    letter-spacing: -0.3px;
   }
-  .band.required { color: #c0392b; }
-  .band.optional { color: #34495e; }
+  .band.required { color: #e1483b; }
+  .band.optional { color: #2a5c70; }
 
+  /* ===== Card ===== */
   .card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 20px 22px;
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 18px;
+    padding: 22px 24px;
     margin-bottom: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 26px rgba(0, 119, 182, 0.10);
   }
   .card h3 {
-    margin: 0 0 12px;
-    font-size: 1.05rem;
+    margin: 0 0 14px;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--ocean-deep);
-    border-bottom: 2px dashed #e3edf2;
-    padding-bottom: 10px;
+    color: var(--deep);
+    border-bottom: 2px dashed #c9e9f2;
+    padding-bottom: 12px;
   }
 
   ul.list { list-style: none; margin: 0; padding: 0; }
-  ul.list li {
-    margin: 4px 0;
-  }
+  ul.list li { margin: 3px 0; }
   label.item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 9px 10px;
-    border-radius: 10px;
+    gap: 13px;
+    padding: 10px 12px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.15s, transform 0.1s;
   }
-  label.item:hover { background: #f3f9fc; }
+  label.item:hover { background: #eef9fc; }
+  label.item:active { transform: scale(0.99); }
   label.item input {
     appearance: none;
     -webkit-appearance: none;
-    width: 22px;
-    height: 22px;
-    min-width: 22px;
-    border: 2px solid var(--ocean);
-    border-radius: 6px;
+    width: 23px; height: 23px; min-width: 23px;
+    border: 2px solid var(--aqua);
+    border-radius: 7px;
     cursor: pointer;
     position: relative;
-    transition: all 0.15s;
+    transition: all 0.18s;
   }
   label.item input:checked {
-    background: var(--ocean);
+    background: linear-gradient(135deg, var(--aqua), var(--deep));
+    border-color: var(--deep);
   }
   label.item input:checked::after {
     content: "✓";
-    color: #fff;
-    font-size: 14px;
-    font-weight: 900;
-    position: absolute;
-    top: 50%; left: 50%;
+    color: #fff; font-size: 15px; font-weight: 900;
+    position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
   }
-  label.item span { font-size: 1rem; }
+  label.item span { font-size: 1.02rem; }
   label.item input:checked + span {
     text-decoration: line-through;
-    color: #9aa7b0;
+    color: #9fb4bd;
   }
 
-  /* Notes */
+  /* ===== Notes ===== */
   .note {
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin: 14px 0;
-    font-size: 0.94rem;
+    border-radius: 14px;
+    padding: 15px 17px;
+    margin: 16px 0;
+    font-size: 0.95rem;
   }
   .note.warn {
-    background: #fff4e5;
+    background: linear-gradient(180deg, #fff3ec, #ffe9e0);
     border-left: 5px solid var(--coral);
   }
   .note.tip {
-    background: #e9f8f0;
+    background: linear-gradient(180deg, #e7faf2, #d9f6ea);
     border-left: 5px solid var(--leaf);
   }
   .note strong { display: block; margin-bottom: 4px; }
-  .note p { margin: 6px 0; }
+  .note p { margin: 7px 0; }
 
+  .pill-note {
+    background: linear-gradient(135deg, var(--aqua-pale), #d8f3fb);
+    color: var(--navy);
+    border-radius: 12px;
+    padding: 11px 16px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+
+  /* ===== Reset ===== */
   .reset-btn {
     display: block;
-    margin: 36px auto 0;
-    background: var(--coral);
+    margin: 40px auto 0;
+    background: linear-gradient(135deg, var(--coral), #ff5a47);
     color: #fff;
     border: none;
-    padding: 12px 28px;
+    padding: 13px 30px;
     border-radius: 99px;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(255,111,97,0.35);
+    box-shadow: 0 8px 20px rgba(255,90,71,0.35);
     transition: transform 0.1s;
   }
   .reset-btn:active { transform: scale(0.96); }
 
   footer {
     text-align: center;
-    margin-top: 28px;
-    font-size: 0.8rem;
-    color: #6b7b88;
+    margin-top: 30px;
+    font-size: 0.82rem;
+    color: #5e8090;
   }
 </style>
 </head>
 <body>
   <header>
-    <h1>🌺 오키나와 여행 체크리스트</h1>
-    <p>설레는 오키나와 여행, 빠진 짐 없이 준비해요!</p>
+    <h1>🌊 오키나와 여행 체크리스트</h1>
+    <p>시원한 오키나와 바다, 빠진 짐 없이 떠나요!</p>
+    <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C240,70 480,0 720,25 C960,50 1200,5 1440,30 L1440,60 L0,60 Z" fill="#e8faff"></path>
+    </svg>
   </header>
 
   <div class="progress-wrap">
@@ -216,7 +261,7 @@
   </div>
 
   <main>
-    <!-- 필수 -->
+    <!-- ===== 필수 ===== -->
     <div class="band required">🟥 선택 아닌 필수</div>
 
     <div class="card">
@@ -260,7 +305,7 @@
       </div>
     </div>
 
-    <!-- 선택 -->
+    <!-- ===== 선택 ===== -->
     <div class="band optional">⬛ 필수는 아니지만 있으면 좋은 준비물</div>
 
     <div class="card">
@@ -284,7 +329,7 @@
 
     <div class="card">
       <h3>💊 상비약</h3>
-      <div class="note tip" style="margin-top:0;">약도 없으면 짐이에요! 팀원이랑 나눠서 챙기기 😊</div>
+      <div class="pill-note">약도 없으면 짐이에요! 팀원이랑 나눠서 챙기기 😊</div>
       <ul class="list">
         <li><label class="item"><input type="checkbox"><span>두통약 / 진통제</span></label></li>
         <li><label class="item"><input type="checkbox"><span>감기약</span></label></li>
@@ -298,7 +343,7 @@
     </div>
 
     <button class="reset-btn" id="reset">🗑️ 체크 모두 초기화</button>
-    <footer>오키나와에서 즐거운 여행 되세요! 🏝️</footer>
+    <footer>오키나와에서 즐거운 여행 되세요! 🏝️🐠</footer>
   </main>
 
 <script>
@@ -307,12 +352,8 @@
   const fill = document.getElementById('fill');
   const ptext = document.getElementById('ptext');
 
-  // 각 체크박스에 인덱스 기반 id 부여
-  boxes.forEach((b, i) => b.dataset.idx = i);
-
   function save() {
-    const state = boxes.map(b => b.checked);
-    localStorage.setItem(KEY, JSON.stringify(state));
+    localStorage.setItem(KEY, JSON.stringify(boxes.map(b => b.checked)));
   }
   function load() {
     try {
